@@ -18,13 +18,13 @@ npm install -g location-live-api
 To test a custom backend, run:
 
 ```shell
-location-live testServer <my-custom-backend-url>
+location-live-api testServer <my-custom-backend-url>
 ```
 
 For example:
 
 ```txt
->> location-live testServer -- https://locationlive.rexgarland.dev
+>> location-live-api testServer -- https://locationlive.rexgarland.dev
 ✅ Server is up.
 ✅ Server can receive location updates.
 ✅ Server can send location updates.

@@ -1,6 +1,6 @@
 {
   "name": "location-live-api",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Interface for custom Location Live backends",
   "keywords": [],
   "repository": {
@@ -13,14 +13,16 @@
     "url": "https://github.com/rexgarland/location-live-api/issues"
   },
   "homepage": "https://github.com/rexgarland/location-live-api",
+  "bin": {
+    "location-live-api": "dist/cli.js"
+  },
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc -d",
     "test": "tsx scripts/testKnownServers.ts",
     "testServer": "tsx scripts/testServer.ts"
   },
-  "dependencies": {},
   "devDependencies": {
     "@types/node": "^24.3.0",
     "tsx": "^4.20.4",
