@@ -22,7 +22,17 @@ You can test any server url with the following:
 npm run testServer -- <server-url>
 ```
 
-E.g. `npm run testServer -- https://locationlive.rexgarland.dev`
+For example:
+
+```txt
+>> npm run testServer -- https://locationlive.rexgarland.dev
+✅ Server is up.
+✅ Server can receive location updates.
+✅ Server can send location updates.
+✅ Server prevents one user from editing another user's location (aka spoofing).
+✅ Location updates include correct timestamps.
+🎯 Complete!
+```
 
 ## Testing
 
