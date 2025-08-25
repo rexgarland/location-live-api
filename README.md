@@ -19,10 +19,10 @@ The repo provides two things:
 You can test any server url with the following:
 
 ```shell
-npm testServer -- <server-url>
+npm run testServer -- <server-url>
 ```
 
-E.g. `npm testServer -- localhost:8080`
+E.g. `npm run testServer -- https://locationlive.rexgarland.dev`
 
 ## Testing
 
