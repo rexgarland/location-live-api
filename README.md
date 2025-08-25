@@ -7,31 +7,55 @@ allowing users to provide their own, custom backend for increased security and p
 
 Any backend that passes the contract defined here will work with the mobile app.
 
-## Structure
-
-The repo provides two things:
-
-- a wrapper for calling a Location Live server: `api.ts`
-- a simple contract to ensure that custom backends implement the correct behavior: `contract.ts`
-
-## Usage
-
-You can test any server url with the following:
+## Install
 
 ```shell
-npm run testServer -- <server-url>
+npm install -g location-live-api
+```
+
+## Run
+
+To test a custom backend, run:
+
+```shell
+location-live testServer <my-custom-backend-url>
 ```
 
 For example:
 
 ```txt
->> npm run testServer -- https://locationlive.rexgarland.dev
+>> location-live testServer -- https://locationlive.rexgarland.dev
 ✅ Server is up.
 ✅ Server can receive location updates.
 ✅ Server can send location updates.
 ✅ Server prevents one user from editing another user's location (aka spoofing).
 ✅ Location updates include correct timestamps.
 🎯 Complete!
+```
+
+## Library
+
+You can also use this package as a library, which exports a small helper class to call your backend.
+
+The code is very simple (check api.ts).
+
+```ts
+import {LocationLiveAPI} from "location-live-api";
+
+const api = new LocationLiveAPI('<my-custom-backend-root-url>')
+
+await api.sendLocationUpdate({
+    username: 'some-unique-username',
+    key: 'some-secret-key',
+    location: {
+        lat: 41.881944,
+        lon: -87.627778
+    }
+});
+
+const {location, timestamp} = await api.getLocation({
+    username: 'some-unique-username',
+})
 ```
 
 ## Testing
@@ -41,11 +65,15 @@ It's a basic sanity check, which you can run for yourself:
 
 ```shell
 npm install
-npm run build
 npm test
 ```
 
 ## Contributing
+
+The repo provides two things:
+
+- a wrapper for calling a Location Live server: `api.ts`
+- a simple contract to ensure that custom backends implement the correct behavior: `contract.ts`
 
 The main goal is portability:
 
