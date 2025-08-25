@@ -1,6 +1,7 @@
 # Location Live API
 
 ![Location Live Server](https://cronitor.io/badges/CXVC5V/production/lj7XI3q8kEFSho9eq3rZBEPIZBc.svg)
+[![npm version](https://badge.fury.io/js/location-live-api.svg)](https://badge.fury.io/js/location-live-api)
 
 This repo represents the backend interface of the [Location Live](https://rexgarland.dev/app/location-live/) mobile app,
 allowing users to provide their own, custom backend for increased security and privacy.
