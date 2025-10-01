@@ -69,6 +69,20 @@ npm install
 npm test
 ```
 
+## Known security issues
+
+The app is designed for casual, short-term use. Users should be aware of its security limitations.
+
+### Brute-force location discovery
+
+A bad actor could find the location of any user by brute-force fetching all possible user keys until one of the endpoints responds with real data.
+They will then know the location and timestamp of some unidentified user.
+
+The probability of this happening can be reduced by:
+- ensuring the space of user keys is large
+- automatically deleting stale location data (e.g. after 7 days of inactivity)
+- encouraging users to create new links instead of reusing old ones
+
 ## Contributing
 
 The repo provides two things:
