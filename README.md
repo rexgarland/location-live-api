@@ -81,7 +81,7 @@ They will then know the location and timestamp of some unidentified user.
 The probability of this happening can be reduced by:
 - ensuring the space of user keys is large
 - automatically deleting stale location data (e.g. after 7 days of inactivity)
-- encouraging users to create new links instead of reusing old ones
+- encouraging users to create new links instead of reusing old ones (e.g. the mobile app does not allow "pausing" a link, only deletion)
 
 ## Contributing
 
